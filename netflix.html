@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="hero">
+
+        <div class="overlay"></div>
+        <nav>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" class="logo" alt="Netflix Logo" />
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">TV Shows</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">New & Popular</a></li>
+                    <li><a href="#">My List</a></li>
+                </ul>
+
+                <select class="language-select">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                  </select>
+                <button class="sign-in-btn">Sign In</button>
+            </div>
+        </nav>
+
+        </nav>
+        <div class="content">
+            <h1>Unlimited movies, TV shows, and more</h1>
+            <h2>Watch anywhere. Cancel anytime.</h2>
+            <p>Ready to watch? Enter your email to create or restart your membership.</p>
+            <form class="email-form">
+                <input type="email" placeholder="Email address" required />
+                <button type="submit">Get Started </button>
+            </form>
+        </div>
+    </div>
+
+    <section class="scroll-row">
+        <h2>Top Trending Now</h2>
+        <div class="movie-scroll-container">
+            <div class="movie-item">
+                <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/maa-et00437726-1750928782.jpg" alt="1" />
+                <span class="movie-number">1</span>
+
+            </div>
+            <div class="movie-item">
+                <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/sitaare-zameen-par-et00444869-1748240580.jpg" alt=" 2 " />
+                <span class="movie-number ">2</span>
+            </div>
+            <div class="movie-item ">
+                <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/housefull-5-et00363347-1749445621.jpg " alt="3 " />
+                <span class="movie-number ">3</span>
+            </div>
+            <div class="movie-item ">
+                <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/kannappa-et00401590-1750744622.jpg" alt="4 " />
+                <span class="movie-number ">4</span>
+            </div>
+            <div class="movie-item ">
+                <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/jarann-et00446492-1747488540.jpg" alt="5 " />
+                <span class="movie-number ">5</span>
+            </div>
+            <div class="movie-item ">
+                <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/jugjugg-jeeyo-et00318143-18-05-2022-08-27-03.jpg " alt="6 " />
+                <span class="movie-number ">6</span>
+            </div>
+            <div class="movie-item ">
+                <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/jaat-et00416952-1733732596.jpg" alt="7 " />
+                <span class="movie-number ">7</span>
+            </div>
+            <div class="movie-item ">
+                <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/jawan-et00330424-1693892482.jpg " alt="8 " />
+                <span class="movie-number ">8</span>
+            </div>
+            <div class="movie-item ">
+                <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/bhool-bhulaiyaa-3-et00353996-1728474428.jpg " alt="9 " />
+                <span class="movie-number ">9</span>
+            </div>
+            <div class="movie-item ">
+                <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/shaitaan-et00384234-1706179766.jpg" alt="10 " />
+                <span class="movie-number ">10</span>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.querySelector(".email-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector("input[type='email']");
+            const email = emailInput.value.trim();
+
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Please enter a valid email address.");
+            } else {
+                alert(`Thanks for signing up with: ${email}`);
+                emailInput.value = "";
+            }
+        });
+
+        document.querySelectorAll(".language-select").forEach(select => {
+            select.addEventListener("change", function() {
+                alert(`Language changed to: ${this.options[this.selectedIndex].text}`);
+            });
+        });
+
+        let scrollContainer = document.querySelector(".movie-scroll-container");
+        let scrollInterval = setInterval(() => {
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+                scrollContainer.scrollLeft = 0;
+            } else {
+                scrollContainer.scrollLeft += 2;
+            }
+        }, 30);
+
+        document.querySelector(".sign-in-btn").addEventListener("click", () => {
+            alert("Sign-in functionality coming soon!");
+        });
+    </script>
+</body>
+<footer class="netflix-footer">
+    <p class="footer-question">Questions? Call <a href="tel:0008009191743">000-800-919-1743</a></p>
+
+    <div class="footer-links">
+        <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Investor Relations</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Speed Test</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Cookie Preferences</a></li>
+            <li><a href="#">Legal Notices</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Ways to Watch</a></li>
+            <li><a href="#">Corporate Information</a></li>
+            <li><a href="#">Only on Netflix</a></li>
+        </ul>
+        <ul>
+            <li><a href="#">Media Centre</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Policy</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-lang">
+        <span class="lang-icon">🌐</span>
+        <select>
+        <option>English</option>
+        <option>हिन्दी</option>
+        <option>தமிழ்</option>
+        <option>বাংলা</option>
+      </select>
+    </div>
+
+    <p class="footer-region">© 2025 Netflix Clone by Dinesh</p>
+</footer>
+
+
+</html>
