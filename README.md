@@ -6,6 +6,7 @@ A responsive, interactive Netflix UI clone built with **HTML**, **CSS**, and **J
 
 
 ![image alt](https://github.com/DS123-ally/Netflix_clone/blob/3a818c8911a58ba9582ce189e86afa9b2533f70f/Screenshot%202025-06-30%20233454.png)
+![image alt](https://github.com/DS123-ally/Netflix_clone/blob/ced14573a7ec552eb3d1e61845b1a8eec67d35e2/Screenshot%202025-06-30%20233524.png)
 
 
 
